@@ -20,6 +20,7 @@ jobs:
       - name: Run tests
         run: cargo test --verbose
   build_python:
+    name: Build and Test Python
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v4
