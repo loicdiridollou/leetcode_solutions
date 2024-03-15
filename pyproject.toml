@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "py_ans"
 authors = [
-    {name = "Josiah Carberry", email = "josiah_carberry@brown.edu"},
+    {name = "Loic Diridollou"},
 ]
-description = "My package description"
+description = "Compilation of Leetcode problem solutions in multiple languages"
 readme = "README.rst"
 requires-python = ">=3.8"
 # keywords = ["one", "two"]
@@ -18,9 +18,10 @@ requires-python = ">=3.8"
 # ]
 dependencies = [
     "requests",
-    'importlib-metadata; python_version>"3.10"',
+    "importlib-metadata; python_version>'3.10'",
     "pytest",
     "ipython",
+    "ruff",
 ]
 dynamic = ["version"]
 
@@ -34,7 +35,7 @@ package_dir=["src/py_ans"]
 
 
 [tool.ruff]
-line-length = 100
+line-length = 88
 target-version = "py312"
 
 [tool.ruff.lint]
@@ -60,8 +61,8 @@ select = [
 pydocstyle.convention = "numpy"
 
 [tool.ruff.lint.per-file-ignores]
-"lib/**/__init__.py" = ["D"]
+"src/**/__init__.py" = ["D"]
 
 [tool.isort]
-known_first_party = ["module_name"]
+known_first_party = ["py_ans"]
 profile = "black"
