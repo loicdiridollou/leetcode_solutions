@@ -1,4 +1,5 @@
 mod s0027_remove_element;
+mod s0125_valid_palindrome;
 mod s0525_contiguous_array;
 
 fn main() {
