@@ -40,5 +40,4 @@ jobs:
           ruff check src/
       - name: Test with pytest
         run: |
-          which pytest
           pytest src -rxXs --cov-report=xml:coverage312.xml --cov src
