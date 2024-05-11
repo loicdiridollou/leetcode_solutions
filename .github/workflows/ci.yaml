@@ -38,11 +38,14 @@ jobs:
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
       - name: Install dependencies
         run: |
+          source venv/bin/activate
           python -m pip install --upgrade pip
           pip install .
       - name: Lint the code
         run: |
+          source venv/bin/activate
           ruff check src/
       - name: Test with pytest
         run: |
+          source venv/bin/activate
           pytest src -rxXs --cov-report=xml:coverage312.xml --cov src
