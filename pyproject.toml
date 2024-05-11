@@ -27,7 +27,7 @@ dependencies = [
 dynamic = ["version"]
 
 [options]
-package_dir=["src/py_ans"]
+package_dir=["src"]
 
 # [project.optional-dependencies]
 # pdf = ["ReportLab>=1.2", "RXP"]
