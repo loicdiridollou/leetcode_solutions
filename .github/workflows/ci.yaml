@@ -31,22 +31,14 @@ jobs:
           python-version: 3.12
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-      - name: Create and activate virtual environment
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          echo "VIRTUAL ENV:" $VIRTUAL_ENV
       - name: Install dependencies
         run: |
-          source venv/bin/activate
           python -m pip install --upgrade pip
-          pip install -e .
+          pip install .
       - name: Lint the code
         run: |
-          source venv/bin/activate
           ruff check src/
       - name: Test with pytest
         run: |
-          source venv/bin/activate
           which pytest
           pytest src -rxXs --cov-report=xml:coverage312.xml --cov src
